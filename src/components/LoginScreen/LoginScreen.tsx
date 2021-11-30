@@ -2,6 +2,7 @@ import './LoginScreen.css';
 import {useRef, FormEvent} from 'react';
 import {useDispatch} from 'react-redux';
 import {APIAction} from '../../store/api-acitons';
+import Footer from '../Footer/Footer';
 
 export default function LoginScreen() {
   const emailRef = useRef<HTMLInputElement | null>(null);
@@ -19,6 +20,7 @@ export default function LoginScreen() {
   };
 
   return (
+    <div className="page">
       <main className="login-screen">
           <div className="login-heading">
               <svg width="40px" height="40px" viewBox="0 0 24 24" aria-hidden="true">
@@ -34,6 +36,7 @@ export default function LoginScreen() {
                   type="email"
                   name="email"
                   placeholder="Email *"
+                  required
               />
               <input
                   className="login-form__input"
@@ -41,9 +44,12 @@ export default function LoginScreen() {
                   type="password"
                   name="password"
                   placeholder="Password *"
+                  required
               />
               <button className="submit-button" type="submit">Submit</button>
           </form>
       </main>
+      <Footer/>
+    </div>
   );
 }

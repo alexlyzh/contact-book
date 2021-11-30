@@ -1,5 +1,5 @@
 import {ActionCreator, ThunkActionResult} from './actions';
-import {User} from './reducer';
+import {Contact, User} from './reducer';
 
 type AuthData = {
   email: string,
@@ -21,4 +21,16 @@ export const APIAction = {
         throw err;
       }
     },
+
+  getContacts: (): ThunkActionResult =>
+    async (dispatch, getState, api): Promise<void> => {
+      dispatch(ActionCreator.startLoadingContacts());
+      try {
+        const {data} = await api.get<Contact[]>(AppRoute.GetContacts);
+        dispatch(ActionCreator.saveContacts(data));
+      } catch (e) {
+        dispatch(ActionCreator.setLoadingContactsError());
+        throw e;
+      }
+    }
 };

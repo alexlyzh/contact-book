@@ -14,7 +14,6 @@
 .login-form {
     display: grid;
     min-width: 290px;
-    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 20px;
 }
@@ -28,14 +27,14 @@
     text-align: center;
     border: none;
     border-radius: 5px;
-    background-color: #0869ff;
+    background-color: #1976d2;
     color: #fff;
     font-size: 18px;
     letter-spacing: 1px;
 }
 
 .submit-button:hover {
-    background-color: #0f1cff;
+    background-color: #1565c0;
 }
 
 .login-form__input {

@@ -8,6 +8,7 @@ export type User = {
 
 export type Contact = {
   id: number,
+  avatar: string,
   name: string,
   username: string,
   email: string,
@@ -22,7 +23,7 @@ export enum RequestStatus {
   ERROR = 'ERROR',
 }
 
-type ContactsData = {
+export type ContactsData = {
   requestStatus: RequestStatus,
   data: Contact[],
 }
