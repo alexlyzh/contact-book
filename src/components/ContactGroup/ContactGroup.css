@@ -1,5 +1,12 @@
+.group {
+  position: sticky;
+  top: 0;
+  padding-top: 1px;
+  background-color: #fff;
+}
+
 .group-name {
-  margin: 20px 15px;
+  margin: 15px;
   padding-bottom: 5px;
   border-bottom: 1px solid #e9e9e9;
   color: #c5c5c5;
@@ -10,21 +17,27 @@
   letter-spacing: 0.35px;
 }
 
-.contact-name__label {
-  display: inline-block;
+.contact-name__button {
+  padding: 10px 15px;
+  width: 100%;
+  text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 10px 15px;
+  background-color: transparent;
+  border: none;
   border-radius: 10px;
-  width: 100%;
+  font-size: 1em;
+  font-weight: 600;
 }
 
-.contact-name__label:hover {
+.contact-name__button:hover {
   cursor: pointer;
+  color: #0b5dde;
 }
 
-.contact-name__radio:checked + .contact-name__label {
+.contact-name__button--active,
+.contact-name__button--active:hover {
   color: #fff;
   background-color: #0b5dde;
 }

@@ -5,7 +5,8 @@ export default function Footer(): JSX.Element {
     <footer className="footer">
       <a
         className="link"
-        href="https://github.com/alexlyzh/takeoff-staff"
+        href="https://github.com/alexlyzh/contact-book"
+        target="_blank"
       >
         GitHub
       </a>

@@ -26,7 +26,7 @@
     cursor: pointer;
     text-align: center;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: #1976d2;
     color: #fff;
     font-size: 18px;
@@ -38,13 +38,13 @@
 }
 
 .login-form__input {
-  padding:15px 14px 13px;
-  font-size:16px;
-  line-height:1.2;
-  color:#383838;
-  background-color:#fff;
-  border:1px solid #818181;
-  border-radius:2px;
+  padding: 15px 14px 13px;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #383838;
+  background-color: #fff;
+  border: 1px solid #818181;
+  border-radius: 15px;
 }
 
 .login-form__input::placeholder {
