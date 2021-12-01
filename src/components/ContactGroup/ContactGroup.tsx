@@ -21,7 +21,10 @@ export default function ContactGroup({group, contacts}: Props): JSX.Element {
     <li><p className="group-name">{group}</p>
       <ul>
         {sortedContacts.map((contact) => (
-          <li className="group-name__item">{contact.name}</li>
+          <li className="contact-name" key={contact.id}>
+            <input className="contact-name__radio visually-hidden" id={`contact-name-${contact.id}`} type="radio" name="contact-name"/>
+            <label className="contact-name__label" htmlFor={`contact-name-${contact.id}`}>{contact.name}</label>
+          </li>
         ))}
       </ul>
     </li>

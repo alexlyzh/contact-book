@@ -21,7 +21,7 @@ export default function ContactsScreen(): JSX.Element {
 
   return (
     <div className="page">
-      <header style={{minHeight: '100px', border: '2px solid blue'}}>
+      <header>
         <h1 className="visually-hidden">Contacts</h1>
       </header>
       <main className="contact-book container">

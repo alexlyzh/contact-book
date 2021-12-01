@@ -1,13 +1,30 @@
 .group-name {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 15px;
   padding-bottom: 5px;
   border-bottom: 1px solid #e9e9e9;
   color: #c5c5c5;
 }
 
-.group-name__item {
+.contact-name {
   font-weight: 500;
   letter-spacing: 0.35px;
-  padding-bottom: 10px;
+}
+
+.contact-name__label {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 15px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.contact-name__label:hover {
+  cursor: pointer;
+}
+
+.contact-name__radio:checked + .contact-name__label {
+  color: #fff;
+  background-color: #0b5dde;
 }
