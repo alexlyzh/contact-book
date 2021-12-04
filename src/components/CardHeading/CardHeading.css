@@ -1,0 +1,58 @@
+.card-heading {
+  display: grid;
+  grid-template-rows: min-content var(--avatar-height);
+  grid-template-columns: var(--avatar-width) 1fr;
+  grid-gap: 20px;
+}
+
+.card-heading__control-pane {
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+}
+
+.card-heading__image {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  justify-self: center;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background-image: url('https://sun9-72.userapi.com/impg/EuBh3cN0YTzOEpDymmRzHBM5fOv-Rl66RcYwBw/tm_YJir5bzk.jpg?size=570x640&quality=95&sign=aed9a125299db63cd7db2594b0a9af5a&type=album');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-heading__name-info {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  align-self: center;
+}
+
+.card-heading__input {
+  display: block;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: default;
+  padding: 5px;
+  width: 80%;
+}
+
+.card-heading__input--editable {
+  background-color: rgba(187,239,253,0.3);
+  cursor: text;
+}
+
+.card-heading__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.card-heading__username {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 5px 0 0 0;
+}

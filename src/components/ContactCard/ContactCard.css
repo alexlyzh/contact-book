@@ -1,0 +1,39 @@
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.contact-card__container {
+  width: 75%;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-card__not-selected {
+  font-size: 2em;
+  padding: 30px;
+  margin-top: 45%;
+  text-align: center;
+}
+
+.avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.contact-card__detailed-info {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.contact-card__footer {
+  margin-top: auto;
+}

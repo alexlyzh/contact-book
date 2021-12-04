@@ -24,8 +24,16 @@ ol, ul {
   padding: 0;
 }
 
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
 :root {
-  --contacts__heading-height: 70px;
+  --heading-height: 70px;
+  --avatar-width: 128px;
+  --avatar-height: 128px;
 }
 
 .page {
@@ -38,7 +46,7 @@ ol, ul {
 
 .container {
   min-width: 290px;
-  max-width: 920px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;

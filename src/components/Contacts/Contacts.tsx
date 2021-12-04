@@ -1,7 +1,9 @@
 import './Contacts.css';
+import {useState} from 'react';
 import {Contact} from '../../store/reducer';
 import ContactGroup from '../ContactGroup/ContactGroup';
-import {useState} from 'react';
+import ContactCard from '../ContactCard/ContactCard';
+
 
 type Props = {
   contacts: Contact[],
@@ -35,8 +37,9 @@ export default function Contacts({contacts}: Props): JSX.Element {
 
   return (
     <form className="contacts">
-      <section className="contacts__left-section">
-        <header className="contacts__heading">
+      <fieldset className="contacts__left-section">
+        <legend className="visually-hidden">This is your contacts list</legend>
+        <header className="contacts__list-heading">
           <h1>Contacts</h1>
           <button className="contacts__add-button" type="button">
             <svg  xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 485 485" xmlSpace="preserve">
@@ -55,10 +58,15 @@ export default function Contacts({contacts}: Props): JSX.Element {
             />
           )) }
         </ul>
-      </section>
-      <section className="contacts__right-section">
-
-      </section>
+      </fieldset>
+      <fieldset className="contacts__right-section">
+        <legend className="visually-hidden">Contact info</legend>
+        <ContactCard
+          contact={contacts
+            .find((contact) => contact.id === activeContactId)
+          }
+        />
+      </fieldset>
     </form>
   );
 }

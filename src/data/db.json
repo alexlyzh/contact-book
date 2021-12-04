@@ -1,12 +1,12 @@
 {
   "login": {
     "email": "al.lyzhin@gmail.com",
-    "password": "f"
+    "password": "c"
   },
   "contacts": [
     {
       "id": 1,
-      "avatar": "https://cdn.fakercloud.com/avatars/adamsxu_128.jpg",
+      "avatar": "",
       "name": "Leanne Graham",
       "username": "Bret",
       "email": "Sincere@april.biz",
@@ -15,7 +15,7 @@
     },
     {
       "id": 2,
-      "avatar": "https://cdn.fakercloud.com/avatars/melvindidit_128.jpg",
+      "avatar": "",
       "name": "Ervin Howell",
       "username": "Antonette",
       "email": "Shanna@melissa.tv",
@@ -24,7 +24,7 @@
     },
     {
       "id": 3,
-      "avatar": "https://cdn.fakercloud.com/avatars/lososina_128.jpg",
+      "avatar": "",
       "name": "Clementine Bauch",
       "username": "Samantha",
       "email": "Nathan@yesenia.net",
@@ -33,7 +33,7 @@
     },
     {
       "id": 4,
-      "avatar": "https://cdn.fakercloud.com/avatars/roxanejammet_128.jpg",
+      "avatar": "",
       "name": "Patricia Lebsack",
       "username": "Karianne",
       "email": "Julianne.OConner@kory.org",
@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "avatar": "https://cdn.fakercloud.com/avatars/ehsandiary_128.jpg",
+      "avatar": "",
       "name": "Chelsey Dietrich",
       "username": "Kamren",
       "email": "Lucio_Hettinger@annie.ca",
@@ -51,7 +51,7 @@
     },
     {
       "id": 6,
-      "avatar": "https://cdn.fakercloud.com/avatars/jerrybai1907_128.jpg",
+      "avatar": "",
       "name": "Dennis Schulist",
       "username": "Leopoldo_Corkery",
       "email": "Karley_Dach@jasper.info",
@@ -60,7 +60,7 @@
     },
     {
       "id": 7,
-      "avatar": "https://cdn.fakercloud.com/avatars/xalionmalik_128.jpg",
+      "avatar": "",
       "name": "Kurtis Weissnat",
       "username": "Elwyn.Skiles",
       "email": "Telly.Hoeger@billy.biz",
@@ -69,7 +69,7 @@
     },
     {
       "id": 8,
-      "avatar": "https://cdn.fakercloud.com/avatars/clubb3rry_128.jpg",
+      "avatar": "",
       "name": "Nicholas Runolfsdottir V",
       "username": "Maxime_Nienow",
       "email": "Sherwood@rosamond.me",
@@ -78,7 +78,7 @@
     },
     {
       "id": 9,
-      "avatar": "https://cdn.fakercloud.com/avatars/brandonmorreale_128.jpg",
+      "avatar": "",
       "name": "Glenna Reichert",
       "username": "Delphine",
       "email": "Chaim_McDermott@dana.io",
@@ -87,12 +87,129 @@
     },
     {
       "id": 10,
-      "avatar": "https://cdn.fakercloud.com/avatars/aviddayentonbay_128.jpg",
+      "avatar": "",
       "name": "Clementina DuBuque",
       "username": "Moriah.Stanton",
       "email": "Rey.Padberg@karina.biz",
       "phone": "024-648-3804",
       "website": "ambrose.net"
+    },
+    {
+      "id": 11,
+      "avatar": "",
+      "name": "Richie Sambora",
+      "username": "Richie",
+      "email": "rich@karina.biz",
+      "phone": "024-648-3804",
+      "website": "demarco.info"
+    },
+    {
+      "id": 12,
+      "avatar": "",
+      "name": "Jimi Hendrix",
+      "username": "",
+      "email": "hendrix@jimi.biz",
+      "phone": "024-648-3804",
+      "website": "demarco.info"
+    },
+    {
+      "id": 13,
+      "avatar": "",
+      "name": "Elvis Presley",
+      "username": "king.of.rock",
+      "email": "the@elvis.com",
+      "phone": "024-648-3804",
+      "website": "demarco.info"
+    },
+    {
+      "id": 14,
+      "avatar": "",
+      "name": "Freddie Mercury",
+      "username": "mercury",
+      "email": "",
+      "phone": "024-648-3804",
+      "website": "demarco.info"
+    },
+    {
+      "id": 15,
+      "avatar": "",
+      "name": "Fyodor Dostoevsky",
+      "username": "",
+      "email": "",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "id": 16,
+      "avatar": "",
+      "name": "Alexander Pushkin",
+      "username": "French",
+      "email": "",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "id": 17,
+      "avatar": "",
+      "name": "Sergey Yesenin",
+      "username": "hooligan",
+      "email": "",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "id": 18,
+      "avatar": "",
+      "name": "Jennifer Aniston",
+      "username": "Rachel",
+      "email": "",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "id": 19,
+      "avatar": "",
+      "name": "Leslie Nielsen",
+      "username": "Naked.Gun",
+      "email": "David.McLaughlin98@hotmail.com",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "id": 20,
+      "avatar": "",
+      "name": "Kanye West",
+      "username": "Yeezy",
+      "email": "",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "id": 21,
+      "avatar": "",
+      "name": "Steven Paul Jobs",
+      "username": "Steve",
+      "email": "steve@apple.com",
+      "phone": "",
+      "website": "apple.com"
+    },
+    {
+      "id": 22,
+      "avatar": "",
+      "name": "Brad Pitt",
+      "username": "Tyler",
+      "email": "Lupe1@gmail.com",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "id": 23,
+      "avatar": "",
+      "name": "Bobbi Brown",
+      "username": "Bobbi",
+      "email": "Cydney38@hotmail.com",
+      "phone": "",
+      "website": ""
     }
   ]
 }

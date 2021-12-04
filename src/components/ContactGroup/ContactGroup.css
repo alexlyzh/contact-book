@@ -20,6 +20,7 @@
 .contact-name__button {
   padding: 10px 15px;
   width: 100%;
+  max-width: 250px;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;

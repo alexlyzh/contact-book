@@ -1,8 +1,8 @@
 .contacts {
-  max-width: 270px;
+  display: flex;
 }
 
-.contacts__heading {
+.contacts__list-heading {
   position: sticky;
   top: 0;
   z-index: 1;
@@ -11,7 +11,7 @@
   align-items: center;
   padding-left: 15px;
   padding-right: 20px;
-  height: var(--contacts__heading-height);
+  height: var(--heading-height);
   background-color: #fff;
 }
 
@@ -35,7 +35,7 @@
   overflow-y: auto;
   padding-right: 20px;
   padding-bottom: 15px;
-  height: calc(100vh - var(--contacts__heading-height));
+  height: calc(100vh - var(--heading-height));
 }
 
 .contacts__left-section {
@@ -43,9 +43,13 @@
   padding-left: 20px;
   border-left: 1px solid #e9e9e9;
   border-right: 1px solid #e9e9e9;
+  border-top: none;
+  border-bottom: none;
 }
 
 .contacts__right-section {
   box-sizing: border-box;
+  width: 100%;
+  border-right: 1px solid #e9e9e9;
 }
 

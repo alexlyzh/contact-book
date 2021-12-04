@@ -1,6 +1,5 @@
 import './ContactGroup.css'
 import {Contact} from '../../store/reducer';
-import {useState} from 'react';
 
 type Props = {
   group: string,
@@ -30,10 +29,8 @@ export default function ContactGroup({group, contacts, activeContactId, setActiv
           <li className="contact-name" key={contact.id}>
             <button
               className={`contact-name__button ${(contact.id === activeContactId) ? 'contact-name__button--active' : ''}`}
-              onClick={(evt) => {
-                evt.preventDefault();
-                setActiveContactId(contact.id);
-              }}
+              type="button"
+              onClick={() => setActiveContactId(contact.id)}
             >
               {contact.name}
             </button>
