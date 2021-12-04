@@ -2,6 +2,7 @@ import './ControlPane.css';
 import {Dispatch, SetStateAction} from 'react';
 
 type Props = {
+  id: number,
   isEditingMode: boolean,
   setIsEditingMode: Dispatch<SetStateAction<boolean>>;
   layoutClassName?: string,

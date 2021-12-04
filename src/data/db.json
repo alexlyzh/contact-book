@@ -1,7 +1,17 @@
 {
   "login": {
     "email": "al.lyzhin@gmail.com",
-    "password": "c"
+    "password": "df"
+  },
+  "logout": {},
+  "selected-contact": {
+    "id": 16,
+    "avatar": "https://im0-tub-ru.yandex.net/i?id=8311938d3f2d10a948696c973d1adf26-sr&n=13",
+    "name": "Alexander Pushkin",
+    "username": "French",
+    "email": "",
+    "phone": "",
+    "website": ""
   },
   "contacts": [
     {
@@ -96,7 +106,7 @@
     },
     {
       "id": 11,
-      "avatar": "",
+      "avatar": "https://i.pinimg.com/236x/b9/ba/fa/b9bafa40f0d41011c6a5e5b49c841048--guitars-cma-fest.jpg",
       "name": "Richie Sambora",
       "username": "Richie",
       "email": "rich@karina.biz",
@@ -105,7 +115,7 @@
     },
     {
       "id": 12,
-      "avatar": "",
+      "avatar": "https://wikirock.net/wp-content/uploads/2020/07/jimihendrix-400x240.jpg",
       "name": "Jimi Hendrix",
       "username": "",
       "email": "hendrix@jimi.biz",
@@ -114,7 +124,7 @@
     },
     {
       "id": 13,
-      "avatar": "",
+      "avatar": "https://www.macleans.ca/wp-content/uploads/2016/12/MAC52_YA_ANNIVERSARIES_POST13.jpg",
       "name": "Elvis Presley",
       "username": "king.of.rock",
       "email": "the@elvis.com",
@@ -123,7 +133,7 @@
     },
     {
       "id": 14,
-      "avatar": "",
+      "avatar": "https://i.pinimg.com/236x/ec/3d/d4/ec3dd4121b0e7fdf16607f36697ffcfa.jpg?nii=t",
       "name": "Freddie Mercury",
       "username": "mercury",
       "email": "",
@@ -132,7 +142,7 @@
     },
     {
       "id": 15,
-      "avatar": "",
+      "avatar": "https://litpoeton.ru/wp-content/uploads/2021/07/emml2gewmaml-dx-1.jpg",
       "name": "Fyodor Dostoevsky",
       "username": "",
       "email": "",
@@ -141,7 +151,7 @@
     },
     {
       "id": 16,
-      "avatar": "",
+      "avatar": "https://im0-tub-ru.yandex.net/i?id=8311938d3f2d10a948696c973d1adf26-sr&n=13",
       "name": "Alexander Pushkin",
       "username": "French",
       "email": "",
@@ -150,7 +160,7 @@
     },
     {
       "id": 17,
-      "avatar": "",
+      "avatar": "https://stihi.ru/pics/2011/07/14/5425.jpg",
       "name": "Sergey Yesenin",
       "username": "hooligan",
       "email": "",
@@ -159,7 +169,7 @@
     },
     {
       "id": 18,
-      "avatar": "",
+      "avatar": "https://jenaniston.org/photos/albums/events/2018/04-19%20WE%20Day%20California%20in%20Los%20Angeles/normal_243.jpg",
       "name": "Jennifer Aniston",
       "username": "Rachel",
       "email": "",
@@ -168,7 +178,7 @@
     },
     {
       "id": 19,
-      "avatar": "",
+      "avatar": "https://i.ytimg.com/vi/HpUnDGCq4po/hqdefault.jpg",
       "name": "Leslie Nielsen",
       "username": "Naked.Gun",
       "email": "David.McLaughlin98@hotmail.com",
@@ -177,7 +187,7 @@
     },
     {
       "id": 20,
-      "avatar": "",
+      "avatar": "https://nation.com.pk/print_images/large/2016-01-10/kanye-west-signals-new-album-out-next-month-1452371021-7286.jpg",
       "name": "Kanye West",
       "username": "Yeezy",
       "email": "",
@@ -186,7 +196,7 @@
     },
     {
       "id": 21,
-      "avatar": "",
+      "avatar": "https://1.bp.blogspot.com/-9-_2OtdS2kk/WpAlNrQWJtI/AAAAAAAAduY/RUs6n_xCkRUgJQrWKrweEglOqUbDYXOSgCLcBGAs/s640/Steve%2BJobs.jpg",
       "name": "Steven Paul Jobs",
       "username": "Steve",
       "email": "steve@apple.com",
@@ -195,7 +205,7 @@
     },
     {
       "id": 22,
-      "avatar": "",
+      "avatar": "https://jewish.ru/culture/cinema/2008/08/pitt.jpg",
       "name": "Brad Pitt",
       "username": "Tyler",
       "email": "Lupe1@gmail.com",
@@ -204,10 +214,19 @@
     },
     {
       "id": 23,
-      "avatar": "",
-      "name": "Bobbi Brown",
-      "username": "Bobbi",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Bobby_Brown_on_Sister_Circle_Live.jpg",
+      "name": "Robert Brown",
+      "username": "Bobby",
       "email": "Cydney38@hotmail.com",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "id": 24,
+      "avatar": "https://assets.faceit-cdn.net/avatars/c49c18c0-d30b-48dd-bf0f-a68abe8f5fe6_1604598162712.jpg",
+      "name": "Gustavo Fring",
+      "username": "Gus",
+      "email": "fring@los.pollos.com",
       "phone": "",
       "website": ""
     }

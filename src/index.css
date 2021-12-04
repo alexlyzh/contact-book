@@ -34,6 +34,7 @@ fieldset {
   --heading-height: 70px;
   --avatar-width: 128px;
   --avatar-height: 128px;
+  --app-min-width: 290px;
 }
 
 .page {
@@ -45,7 +46,7 @@ fieldset {
 }
 
 .container {
-  min-width: 290px;
+  min-width: var(--app-min-width);
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;

@@ -31,6 +31,7 @@ export type ContactsData = {
 export type State = {
   user: User | null,
   contacts: ContactsData,
+  selectedContact: Contact | null,
 }
 
 const initialState: State = {
@@ -39,6 +40,7 @@ const initialState: State = {
     requestStatus: RequestStatus.IDLE,
     data: [],
   },
+  selectedContact: null,
 }
 
 export const reducer = createReducer(initialState, (builder) => {
@@ -51,7 +53,8 @@ export const reducer = createReducer(initialState, (builder) => {
       state.contacts = {
         requestStatus: RequestStatus.IDLE,
         data: [],
-      }
+      };
+      state.selectedContact = null;
     })
     .addCase(ActionCreator.saveContacts, (state, action) => {
       state.contacts = {
@@ -70,5 +73,8 @@ export const reducer = createReducer(initialState, (builder) => {
         requestStatus: RequestStatus.ERROR,
         data: [],
       }
+    })
+    .addCase(ActionCreator.selectContact, (state, action) => {
+      state.selectedContact = action.payload;
     });
 });

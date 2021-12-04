@@ -1,23 +1,21 @@
 import './ContactGroup.css'
 import {Contact} from '../../store/reducer';
+import {sortContacts} from '../../utils';
+import {useDispatch, useSelector} from 'react-redux';
+import {getSelectedContact} from '../../store/selectors';
+import {APIAction} from '../../store/api-acitons';
 
 type Props = {
   group: string,
   contacts: Contact[],
-  activeContactId: number | null,
-  setActiveContactId: (id: number) => void,
 }
 
-export default function ContactGroup({group, contacts, activeContactId, setActiveContactId}: Props): JSX.Element {
-  const sortedContacts = [...contacts].sort((a, b) => {
-    if (a.name > b.name) {
-      return 1;
-    }
-    if (a.name < b.name) {
-      return -1;
-    }
-    return 0;
-  });
+export default function ContactGroup({group, contacts,}: Props): JSX.Element {
+  const dispatch = useDispatch();
+  const selectedContact = useSelector(getSelectedContact);
+  let selectedID = selectedContact ? selectedContact.id : null;
+
+  const sortedContacts = sortContacts(contacts);
 
   return(
     <li>
@@ -28,9 +26,9 @@ export default function ContactGroup({group, contacts, activeContactId, setActiv
         {sortedContacts.map((contact) => (
           <li className="contact-name" key={contact.id}>
             <button
-              className={`contact-name__button ${(contact.id === activeContactId) ? 'contact-name__button--active' : ''}`}
+              className={`contact-name__button ${(contact.id === selectedID) ? 'contact-name__button--active' : ''}`}
               type="button"
-              onClick={() => setActiveContactId(contact.id)}
+              onClick={() => dispatch(APIAction.postSelectedContact(contact))}
             >
               {contact.name}
             </button>

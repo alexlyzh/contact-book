@@ -12,14 +12,13 @@ export enum ActionType {
   StartLoadingContacts = 'StartLoadingContacts',
   SaveContacts = 'SaveContacts',
   SetLoadingContactsError = 'SetLoadingContactsError',
+  SelectContact = 'SelectContact',
 }
 
 export const ActionCreator = {
   loginUser: createAction(
     ActionType.Login,
-    (user: User) => ({
-      payload: user,
-    })
+    (user: User) => ({payload: user})
   ),
 
   startLoadingContacts: createAction(ActionType.StartLoadingContacts),
@@ -28,10 +27,13 @@ export const ActionCreator = {
 
   saveContacts: createAction(
     ActionType.SaveContacts,
-    (contacts) => ({
-      payload: contacts,
-    })
+    (contacts) => ({payload: contacts})
   ),
 
   logoutUser: createAction(ActionType.Logout),
+
+  selectContact: createAction(
+    ActionType.SelectContact,
+    (contact) => ({payload: contact}),
+  )
 };

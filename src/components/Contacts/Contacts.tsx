@@ -1,39 +1,21 @@
 import './Contacts.css';
-import {useState} from 'react';
 import {Contact} from '../../store/reducer';
 import ContactGroup from '../ContactGroup/ContactGroup';
 import ContactCard from '../ContactCard/ContactCard';
-
+import ContactCardEmpty from '../ContactCardEmpty/ContactCardEmpty';
+import {getGroupedContacts} from '../../utils';
+import {useSelector} from 'react-redux';
+import {getSelectedContact} from '../../store/selectors';
 
 type Props = {
   contacts: Contact[],
 }
 
-type GroupedContacts = {
-  [key: string]: Contact[],
-}
-
-const getGroupedContacts = (contacts: Contact[]): GroupedContacts => {
-  const groupedContacts: GroupedContacts = {};
-
-  contacts.forEach((contact) => {
-    const firstLetter = contact.name[0];
-    if (firstLetter in groupedContacts) {
-      groupedContacts[firstLetter].push(contact);
-      return;
-    }
-    groupedContacts[firstLetter] = [contact];
-  });
-
-  return groupedContacts;
-};
-
 export default function Contacts({contacts}: Props): JSX.Element {
+  const selectedContact = useSelector(getSelectedContact);
 
   const groupedContacts = getGroupedContacts(contacts);
   const groups = Object.keys(groupedContacts).sort((a, b) => (a > b) ? 1 : -1);
-
-  const [activeContactId, setActiveContactId] = useState<number | null>(null);
 
   return (
     <form className="contacts">
@@ -53,19 +35,13 @@ export default function Contacts({contacts}: Props): JSX.Element {
               key={group}
               group={group}
               contacts={groupedContacts[group]}
-              activeContactId={activeContactId}
-              setActiveContactId={setActiveContactId}
             />
           )) }
         </ul>
       </fieldset>
       <fieldset className="contacts__right-section">
         <legend className="visually-hidden">Contact info</legend>
-        <ContactCard
-          contact={contacts
-            .find((contact) => contact.id === activeContactId)
-          }
-        />
+        {selectedContact ? <ContactCard contact={selectedContact}/> : <ContactCardEmpty/>}
       </fieldset>
     </form>
   );
