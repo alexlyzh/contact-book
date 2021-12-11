@@ -1,6 +1,6 @@
 import './CardHeading.css'
 import ControlPane from '../ControlPane/ControlPane';
-import {Dispatch, SetStateAction} from 'react';
+import {Dispatch, SetStateAction, ChangeEvent} from 'react';
 
 type Props = {
   id: number,
@@ -9,11 +9,12 @@ type Props = {
   avatar: string,
   isEditingMode: boolean,
   setIsEditingMode: Dispatch<SetStateAction<boolean>>,
+  onInputChange: (evt: ChangeEvent<HTMLInputElement>) => void,
   layoutClassName?: string,
 }
 
 export default function CardHeading(props: Props): JSX.Element {
-  const {id, isEditingMode, setIsEditingMode, name, username, avatar, layoutClassName} = props;
+  const {id, isEditingMode, setIsEditingMode, name, username, avatar, layoutClassName, onInputChange} = props;
 
   return (
     <header className={`${layoutClassName ? layoutClassName : ''} card-heading`}>
@@ -33,6 +34,7 @@ export default function CardHeading(props: Props): JSX.Element {
           name="name"
           value={name}
           readOnly={!isEditingMode}
+          onChange={onInputChange}
           required
         />
         {username &&
@@ -41,6 +43,7 @@ export default function CardHeading(props: Props): JSX.Element {
             type="text"
             name="username"
             value={username}
+            onChange={onInputChange}
             readOnly={!isEditingMode}
           />}
       </div>

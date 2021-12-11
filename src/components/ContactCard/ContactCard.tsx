@@ -1,19 +1,32 @@
 import './ContactCard.css'
-import {Contact} from '../../store/reducer';
 import Footer from '../Footer/Footer';
 import ContactDetail from '../ContactDetail/ContactDetail';
 import {InputType} from '../../constants';
-import {useState} from 'react';
+import {ChangeEvent, useState} from 'react';
 import CardHeading from '../CardHeading/CardHeading';
+import {useDispatch, useSelector} from 'react-redux';
+import {getSelectedContact} from '../../store/selectors';
+import ContactCardEmpty from '../ContactCardEmpty/ContactCardEmpty';
+import {ActionCreator} from '../../store/actions';
 
-type Props = {
-  contact: Contact,
-}
-
-export default function ContactCard({contact}: Props): JSX.Element {
-  const {id, avatar, name, username, phone, website, email} = contact;
+export default function ContactCard(): JSX.Element {
+  const dispatch = useDispatch();
+  const contact = useSelector(getSelectedContact);
   const [isEditingMode, setIsEditingMode] = useState(false);
 
+  if (contact === null) {
+    return <ContactCardEmpty />;
+  }
+
+  const onInputChange = ({target}: ChangeEvent<HTMLInputElement>) => {
+    const update = {
+      ...contact,
+      [target.name]: target.value,
+    };
+    dispatch(ActionCreator.updateSelectedContact(update));
+  };
+
+  const {id, avatar, name, username, phone, website, email} = contact;
   return (
     <div className="contact-card">
       <CardHeading
@@ -24,12 +37,13 @@ export default function ContactCard({contact}: Props): JSX.Element {
         avatar={avatar}
         isEditingMode={isEditingMode}
         setIsEditingMode={setIsEditingMode}
+        onInputChange={onInputChange}
       />
       {id}
       <div className="contact-card__container contact-card__detailed-info">
-        <ContactDetail value={email} inputType={InputType.Email} isEditingMode={isEditingMode}/>
-        <ContactDetail value={phone} inputType={InputType.Phone} isEditingMode={isEditingMode}/>
-        <ContactDetail value={website} inputType={InputType.Website} isEditingMode={isEditingMode}/>
+        <ContactDetail value={email} inputType={InputType.Email} isEditingMode={isEditingMode} onInputChange={onInputChange}/>
+        <ContactDetail value={phone} inputType={InputType.Phone} isEditingMode={isEditingMode} onInputChange={onInputChange}/>
+        <ContactDetail value={website} inputType={InputType.Website} isEditingMode={isEditingMode} onInputChange={onInputChange}/>
       </div>
       <Footer className="contact-card__footer"/>
     </div>

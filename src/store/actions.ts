@@ -2,7 +2,7 @@ import {createAction} from '@reduxjs/toolkit';
 import {Action} from '@reduxjs/toolkit';
 import {AxiosInstance} from 'axios';
 import {ThunkAction} from '@reduxjs/toolkit';
-import {State, User} from './reducer';
+import {Contact, State, User} from './reducer';
 
 export type ThunkActionResult<R = Promise<void>> = ThunkAction<R, State, AxiosInstance, Action>;
 
@@ -10,30 +10,30 @@ export enum ActionType {
   Login = 'Login',
   Logout = 'Logout',
   StartLoadingContacts = 'StartLoadingContacts',
-  SaveContacts = 'SaveContacts',
+  SaveContactList = 'SaveContactList',
   SetLoadingContactsError = 'SetLoadingContactsError',
-  SelectContact = 'SelectContact',
+  UpdateSelectedContact = 'UpdateSelectedContact',
 }
 
 export const ActionCreator = {
   loginUser: createAction(
     ActionType.Login,
-    (user: User) => ({payload: user})
+    (user: User) => ({payload: user}),
   ),
 
   startLoadingContacts: createAction(ActionType.StartLoadingContacts),
 
   setLoadingContactsError: createAction(ActionType.SetLoadingContactsError),
 
-  saveContacts: createAction(
-    ActionType.SaveContacts,
-    (contacts) => ({payload: contacts})
+  saveContactList: createAction(
+    ActionType.SaveContactList,
+    (contacts: Contact[]) => ({payload: contacts}),
   ),
 
   logoutUser: createAction(ActionType.Logout),
 
-  selectContact: createAction(
-    ActionType.SelectContact,
-    (contact) => ({payload: contact}),
-  )
+  updateSelectedContact: createAction(
+    ActionType.UpdateSelectedContact,
+    (contact: Contact | null) => ({payload: contact}),
+  ),
 };

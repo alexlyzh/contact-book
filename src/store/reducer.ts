@@ -32,6 +32,7 @@ export type State = {
   user: User | null,
   contacts: ContactsData,
   selectedContact: Contact | null,
+  isLoadingFinished: boolean,
 }
 
 const initialState: State = {
@@ -41,6 +42,7 @@ const initialState: State = {
     data: [],
   },
   selectedContact: null,
+  isLoadingFinished: false,
 }
 
 export const reducer = createReducer(initialState, (builder) => {
@@ -56,11 +58,12 @@ export const reducer = createReducer(initialState, (builder) => {
       };
       state.selectedContact = null;
     })
-    .addCase(ActionCreator.saveContacts, (state, action) => {
+    .addCase(ActionCreator.saveContactList, (state, action) => {
       state.contacts = {
         requestStatus: RequestStatus.SUCCESS,
         data: action.payload,
-      }
+      };
+      state.isLoadingFinished = true;
     })
     .addCase(ActionCreator.startLoadingContacts, (state) => {
       state.contacts = {
@@ -72,9 +75,10 @@ export const reducer = createReducer(initialState, (builder) => {
       state.contacts = {
         requestStatus: RequestStatus.ERROR,
         data: [],
-      }
+      };
+      state.isLoadingFinished = true;
     })
-    .addCase(ActionCreator.selectContact, (state, action) => {
+    .addCase(ActionCreator.updateSelectedContact, (state, action) => {
       state.selectedContact = action.payload;
     });
 });

@@ -23,17 +23,21 @@ export default function ContactGroup({group, contacts,}: Props): JSX.Element {
         <p className="group-name">{group}</p>
       </div>
       <ul>
-        {sortedContacts.map((contact) => (
-          <li className="contact-name" key={contact.id}>
-            <button
-              className={`contact-name__button ${(contact.id === selectedID) ? 'contact-name__button--active' : ''}`}
-              type="button"
-              onClick={() => dispatch(APIAction.postSelectedContact(contact))}
-            >
-              {contact.name}
-            </button>
-          </li>
-        ))}
+        {sortedContacts.map((contact) => {
+          const isSelected = contact.id === selectedID;
+          return(
+            <li className="contact-name" key={contact.id}>
+              <button
+                className={`contact-name__button ${isSelected ? 'contact-name__button--active' : ''}`}
+                type="button"
+                onClick={() => dispatch(APIAction.postSelectedContact(contact))}
+                tabIndex={1}
+              >
+                {contact.name}
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </li>
   );

@@ -1,5 +1,6 @@
 import './ContactDetail.css';
 import {InputType} from '../../constants';
+import {ChangeEvent} from 'react';
 
 const InputLabel = {
  [InputType.Name]: 'name',
@@ -13,10 +14,11 @@ type Props = {
   inputType: InputType,
   value: string,
   isEditingMode: boolean,
+  onInputChange: (evt: ChangeEvent<HTMLInputElement>) => void,
 }
 
 export default function ContactDetail(props: Props): JSX.Element {
-  const {inputType, value, isEditingMode} = props;
+  const {inputType, value, isEditingMode, onInputChange} = props;
 
   return (
     <div className="contact-detail">
@@ -27,9 +29,11 @@ export default function ContactDetail(props: Props): JSX.Element {
         className={`contact-detail__input ${isEditingMode ? 'contact-detail__input--editable' : ''}`}
         id={`contact-card__${inputType}`}
         type={inputType}
+        name={InputLabel[inputType]}
         value={value}
         readOnly={!isEditingMode}
         autoComplete="off"
+        onChange={onInputChange}
       />
     </div>
   );

@@ -1,5 +1,8 @@
 import './ControlPane.css';
 import {Dispatch, SetStateAction} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {APIAction} from '../../store/api-acitons';
+import {getSelectedContact} from '../../store/selectors';
 
 type Props = {
   id: number,
@@ -9,6 +12,8 @@ type Props = {
 }
 
 export default function ControlPane(props: Props): JSX.Element {
+  const dispatch = useDispatch();
+  const contact = useSelector(getSelectedContact);
   const {isEditingMode, setIsEditingMode, layoutClassName} = props;
 
   return (
@@ -16,9 +21,7 @@ export default function ControlPane(props: Props): JSX.Element {
       <button
         className="control-pane__button control-pane__button-delete"
         type="button"
-        onClick={() => {
-          // TODO: dispatch delete action
-        }}
+        onClick={() => contact && dispatch(APIAction.deleteContact(contact))}
       >
         Delete contact
       </button>
@@ -27,8 +30,8 @@ export default function ControlPane(props: Props): JSX.Element {
         type="button"
         onClick={() => {
           setIsEditingMode(!isEditingMode);
-          if (isEditingMode) {
-            // TODO: dispatch saving the update
+          if (isEditingMode && contact) {
+            dispatch(APIAction.syncContact(contact));
           }
         }}
       >

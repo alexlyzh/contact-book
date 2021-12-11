@@ -2,17 +2,14 @@ import './Contacts.css';
 import {Contact} from '../../store/reducer';
 import ContactGroup from '../ContactGroup/ContactGroup';
 import ContactCard from '../ContactCard/ContactCard';
-import ContactCardEmpty from '../ContactCardEmpty/ContactCardEmpty';
 import {getGroupedContacts} from '../../utils';
-import {useSelector} from 'react-redux';
-import {getSelectedContact} from '../../store/selectors';
 
 type Props = {
   contacts: Contact[],
 }
 
 export default function Contacts({contacts}: Props): JSX.Element {
-  const selectedContact = useSelector(getSelectedContact);
+
 
   const groupedContacts = getGroupedContacts(contacts);
   const groups = Object.keys(groupedContacts).sort((a, b) => (a > b) ? 1 : -1);
@@ -41,7 +38,8 @@ export default function Contacts({contacts}: Props): JSX.Element {
       </fieldset>
       <fieldset className="contacts__right-section">
         <legend className="visually-hidden">Contact info</legend>
-        {selectedContact ? <ContactCard contact={selectedContact}/> : <ContactCardEmpty/>}
+        <ContactCard />
+
       </fieldset>
     </form>
   );
