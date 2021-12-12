@@ -3,14 +3,14 @@ import {Contact} from '../../store/reducer';
 import ContactGroup from '../ContactGroup/ContactGroup';
 import ContactCard from '../ContactCard/ContactCard';
 import {getGroupedContacts} from '../../utils';
+import {useState} from 'react';
 
 type Props = {
   contacts: Contact[],
 }
 
 export default function Contacts({contacts}: Props): JSX.Element {
-
-
+  const [isEditingMode, setIsEditingMode] = useState(false);
   const groupedContacts = getGroupedContacts(contacts);
   const groups = Object.keys(groupedContacts).sort((a, b) => (a > b) ? 1 : -1);
 
@@ -32,13 +32,14 @@ export default function Contacts({contacts}: Props): JSX.Element {
               key={group}
               group={group}
               contacts={groupedContacts[group]}
+              setIsEditingMode={setIsEditingMode}
             />
           )) }
         </ul>
       </fieldset>
       <fieldset className="contacts__right-section">
         <legend className="visually-hidden">Contact info</legend>
-        <ContactCard />
+        <ContactCard isEditingMode={isEditingMode} setIsEditingMode={setIsEditingMode}/>
 
       </fieldset>
     </form>

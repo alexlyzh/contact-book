@@ -4,13 +4,15 @@ import {sortContacts} from '../../utils';
 import {useDispatch, useSelector} from 'react-redux';
 import {getSelectedContact} from '../../store/selectors';
 import {APIAction} from '../../store/api-acitons';
+import {Dispatch, SetStateAction} from 'react';
 
 type Props = {
   group: string,
   contacts: Contact[],
+  setIsEditingMode: Dispatch<SetStateAction<boolean>>,
 }
 
-export default function ContactGroup({group, contacts,}: Props): JSX.Element {
+export default function ContactGroup({group, contacts, setIsEditingMode}: Props): JSX.Element {
   const dispatch = useDispatch();
   const selectedContact = useSelector(getSelectedContact);
   let selectedID = selectedContact ? selectedContact.id : null;
@@ -30,7 +32,10 @@ export default function ContactGroup({group, contacts,}: Props): JSX.Element {
               <button
                 className={`contact-name__button ${isSelected ? 'contact-name__button--active' : ''}`}
                 type="button"
-                onClick={() => dispatch(APIAction.postSelectedContact(contact))}
+                onClick={() => {
+                  setIsEditingMode(false);
+                  dispatch(APIAction.postSelectedContact(contact));
+                }}
                 tabIndex={1}
               >
                 {contact.name}

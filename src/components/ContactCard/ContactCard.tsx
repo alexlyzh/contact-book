@@ -2,17 +2,21 @@ import './ContactCard.css'
 import Footer from '../Footer/Footer';
 import ContactDetail from '../ContactDetail/ContactDetail';
 import {InputType} from '../../constants';
-import {ChangeEvent, useState} from 'react';
+import {ChangeEvent, Dispatch, SetStateAction} from 'react';
 import CardHeading from '../CardHeading/CardHeading';
 import {useDispatch, useSelector} from 'react-redux';
 import {getSelectedContact} from '../../store/selectors';
 import ContactCardEmpty from '../ContactCardEmpty/ContactCardEmpty';
 import {ActionCreator} from '../../store/actions';
 
-export default function ContactCard(): JSX.Element {
+type Props = {
+  isEditingMode: boolean,
+  setIsEditingMode: Dispatch<SetStateAction<boolean>>,
+}
+
+export default function ContactCard({isEditingMode, setIsEditingMode}: Props): JSX.Element {
   const dispatch = useDispatch();
   const contact = useSelector(getSelectedContact);
-  const [isEditingMode, setIsEditingMode] = useState(false);
 
   if (contact === null) {
     return <ContactCardEmpty />;
