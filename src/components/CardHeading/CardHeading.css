@@ -17,7 +17,7 @@
   width: 128px;
   height: 128px;
   border-radius: 50%;
-  background-image: url('../../avatar-placeholder.jpg');
+  background-image: url('./avatar-placeholder.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }

@@ -1,17 +1,17 @@
 {
   "login": {
     "email": "al.lyzhin@gmail.com",
-    "password": "1223"
+    "password": "12"
   },
   "logout": {},
   "selected-contact": {
-    "id": 25,
-    "avatar": "",
-    "name": "No Name",
-    "username": "",
-    "email": "",
+    "id": 21,
+    "avatar": "https://1.bp.blogspot.com/-9-_2OtdS2kk/WpAlNrQWJtI/AAAAAAAAduY/RUs6n_xCkRUgJQrWKrweEglOqUbDYXOSgCLcBGAs/s640/Steve%2BJobs.jpg",
+    "name": "Steven Paul Jobs",
+    "username": "Steve",
+    "email": "steve@apple.com",
     "phone": "",
-    "website": ""
+    "website": "apple.com"
   },
   "contacts": [
     {
@@ -189,7 +189,7 @@
       "id": 20,
       "avatar": "https://nation.com.pk/print_images/large/2016-01-10/kanye-west-signals-new-album-out-next-month-1452371021-7286.jpg",
       "name": "Kanye West",
-      "username": "Yeezy",
+      "username": "",
       "email": "",
       "phone": "",
       "website": ""
@@ -227,15 +227,6 @@
       "name": "Gustavo Fring",
       "username": "Gus",
       "email": "fring@los.pollos.com",
-      "phone": "",
-      "website": ""
-    },
-    {
-      "id": 25,
-      "avatar": "",
-      "name": "No Name",
-      "username": "",
-      "email": "",
       "phone": "",
       "website": ""
     }

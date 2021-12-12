@@ -5,6 +5,7 @@ import ContactCard from '../ContactCard/ContactCard';
 import {getGroupedContacts, isEscKeyDown} from '../../utils';
 import {useCallback, useEffect, useState} from 'react';
 import AddButton from '../AddButton/AddButton';
+import Search from '../Search/Search';
 
 type Props = {
   contacts: Contact[],
@@ -31,13 +32,14 @@ const Contacts = ({contacts}: Props): JSX.Element => {
     <form className="contacts">
       <fieldset className="contacts__left-section">
         <legend className="visually-hidden">This is your contacts list</legend>
-        <header className="contacts__list-heading">
-          <h1>Contacts</h1>
+        <header className="contacts__header">
+          <h1 className="contacts__heading">Contacts</h1>
           <AddButton
             isEditingMode={isEditingMode}
             setIsEditingMode={setIsEditingMode}
             contacts={contacts}
           />
+          <Search/>
         </header>
         <ul className="contact-list">
           { groups.map((group) => (

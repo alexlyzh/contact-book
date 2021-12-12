@@ -31,7 +31,7 @@ fieldset {
 }
 
 :root {
-  --heading-height: 70px;
+  --heading-height: 100px;
   --avatar-width: 128px;
   --avatar-height: 128px;
   --app-min-width: 290px;
