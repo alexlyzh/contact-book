@@ -11,7 +11,7 @@ type Props = {
   layoutClassName?: string,
 }
 
-export default function ControlPane(props: Props): JSX.Element {
+const ControlPane = (props: Props): JSX.Element => {
   const dispatch = useDispatch();
   const contact = useSelector(getSelectedContact);
   const {isEditingMode, setIsEditingMode, layoutClassName} = props;
@@ -27,11 +27,18 @@ export default function ControlPane(props: Props): JSX.Element {
       </button>
       <button
         className="control-pane__button control-pane__button-edit"
-        type="button"
-        onClick={() => {
+        type="submit"
+        onClick={(evt) => {
+          evt.preventDefault();
           setIsEditingMode(!isEditingMode);
+
           if (isEditingMode && contact) {
-            dispatch(APIAction.syncContact(contact));
+            dispatch(APIAction.postSelectedContact(contact));
+            if (contact.isNew) {
+              dispatch(APIAction.createContact(contact));
+              return;
+            }
+            dispatch(APIAction.updateContact(contact));
           }
         }}
       >
@@ -40,3 +47,5 @@ export default function ControlPane(props: Props): JSX.Element {
     </div>
   );
 }
+
+export default ControlPane;

@@ -14,6 +14,7 @@ export type Contact = {
   email: string,
   phone: string,
   website: string,
+  isNew?: boolean,
 }
 
 export enum RequestStatus {

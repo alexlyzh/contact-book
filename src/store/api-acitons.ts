@@ -2,6 +2,7 @@ import {ActionCreator, ThunkActionResult} from './actions';
 import {Contact, User} from './reducer';
 import {generatePath} from 'react-router-dom';
 import {toast} from 'react-toastify';
+import {NO_NAME} from '../constants';
 
 type AuthData = {
   email: string,
@@ -15,6 +16,15 @@ enum APIRoute {
   Contact = '/contacts/:id',
   SelectedContact = '/selected-contact',
 }
+
+const handleContact = (contact: Contact) => {
+  const contactCopy = {...contact};
+  delete contactCopy.isNew;
+  if (!contactCopy.name) {
+    contactCopy.name = NO_NAME;
+  }
+  return contactCopy;
+};
 
 export const APIAction = {
   login: ({email, password}: AuthData): ThunkActionResult =>
@@ -63,19 +73,35 @@ export const APIAction = {
   postSelectedContact: (contact: Contact): ThunkActionResult =>
     async (dispatch, getState, api): Promise<void> => {
       try {
-        const {data} = await api.post<Contact>(APIRoute.SelectedContact, contact);
+        const contactCopy = handleContact(contact);
+
+        const {data} = await api.post<Contact>(APIRoute.SelectedContact, contactCopy);
         dispatch(ActionCreator.updateSelectedContact(data));
       } catch (e) {
         throw e;
       }
     },
 
-  syncContact: (contact: Contact): ThunkActionResult =>
+  createContact: (contact: Contact): ThunkActionResult =>
     async (dispatch, getState, api): Promise<void> => {
       try {
-        const id = contact.id.toString();
-        await api.post<Contact>(APIRoute.SelectedContact, contact);
-        const {data} = await api.put<Contact>(generatePath(APIRoute.Contact, {id}), contact);
+        const contactCopy = handleContact(contact);
+
+        const {data} = await api.post<Contact>(APIRoute.Contacts, contactCopy);
+        const contacts = [...getState().contacts.data, data];
+        dispatch(ActionCreator.saveContactList(contacts));
+      } catch (e) {
+        throw e;
+      }
+    },
+
+  updateContact: (contact: Contact): ThunkActionResult =>
+    async (dispatch, getState, api): Promise<void> => {
+      try {
+        const contactCopy = handleContact(contact);
+        const id = contactCopy.id.toString();
+
+        const {data} = await api.put<Contact>(generatePath(APIRoute.Contact, {id}), contactCopy);
 
         const contacts = [...getState().contacts.data];
         const index = contacts.findIndex((item) => item.id === data.id);
@@ -92,12 +118,13 @@ export const APIAction = {
         const id = contact.id.toString();
         await api.delete(generatePath(APIRoute.Contact, {id}));
         await api.post(APIRoute.SelectedContact, {});
+        dispatch(ActionCreator.updateSelectedContact(null));
 
         const contacts = [...getState().contacts.data];
         const index = contacts.findIndex((item) => item.id === contact.id);
         contacts.splice(index, 1);
         dispatch(ActionCreator.saveContactList(contacts));
-        dispatch(ActionCreator.updateSelectedContact(null));
+
         toast.info(`Contact ${contact.name} deleted`);
       } catch (e) {
         throw e;

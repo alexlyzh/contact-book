@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux';
 import {APIAction} from '../../store/api-acitons';
 import Footer from '../Footer/Footer';
 
-export default function LoginScreen() {
+const LoginScreen = () => {
   const emailRef = useRef<HTMLInputElement | null>(null);
   const passwordRef = useRef<HTMLInputElement | null>(null);
   const dispatch = useDispatch();
@@ -53,3 +53,5 @@ export default function LoginScreen() {
     </div>
   );
 }
+
+export default LoginScreen;

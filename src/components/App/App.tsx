@@ -5,7 +5,7 @@ import {getUser} from '../../store/selectors';
 import {Routes, Route, Navigate} from 'react-router-dom';
 import {AppRoute} from '../../constants';
 
-function App(): JSX.Element {
+const App = (): JSX.Element => {
   const user = useSelector(getUser);
 
   return (

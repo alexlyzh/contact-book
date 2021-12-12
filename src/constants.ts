@@ -11,3 +11,5 @@ export enum InputType  {
   Phone = 'tel',
   Website = 'text',
 }
+
+export const NO_NAME = 'No Name';

@@ -1,18 +1,23 @@
 import {Contact} from './store/reducer';
+import {NO_NAME} from './constants';
 
 export type GroupedContacts = {
   [key: string]: Contact[],
 }
+
 export const getGroupedContacts = (contacts: Contact[]): GroupedContacts => {
   const groupedContacts: GroupedContacts = {};
 
   contacts.forEach((contact) => {
-    const firstLetter = contact.name[0];
-    if (firstLetter in groupedContacts) {
-      groupedContacts[firstLetter].push(contact);
+    const shouldBeInSpecialGroup = !/^[a-zA-Z]/.test(contact.name) || contact.name === NO_NAME;
+
+    const groupName = shouldBeInSpecialGroup ? '#' : contact.name[0].toUpperCase();
+
+    if (groupName in groupedContacts) {
+      groupedContacts[groupName].push(contact);
       return;
     }
-    groupedContacts[firstLetter] = [contact];
+    groupedContacts[groupName] = [contact];
   });
 
   return groupedContacts;
@@ -29,3 +34,5 @@ export const sortContacts = (contacts: Contact[]) => {
     return 0;
   })
 };
+
+export const isEscKeyDown = (evt: KeyboardEvent) => evt.keyCode === 27;

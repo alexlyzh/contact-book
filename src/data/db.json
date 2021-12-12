@@ -1,17 +1,17 @@
 {
   "login": {
     "email": "al.lyzhin@gmail.com",
-    "password": "2f2"
+    "password": "1223"
   },
   "logout": {},
   "selected-contact": {
-    "id": 21,
-    "avatar": "https://1.bp.blogspot.com/-9-_2OtdS2kk/WpAlNrQWJtI/AAAAAAAAduY/RUs6n_xCkRUgJQrWKrweEglOqUbDYXOSgCLcBGAs/s640/Steve%2BJobs.jpg",
-    "name": "Steven Paul Jobs",
-    "username": "Steve",
-    "email": "steve@apple.com",
+    "id": 25,
+    "avatar": "",
+    "name": "No Name",
+    "username": "",
+    "email": "",
     "phone": "",
-    "website": "apple.com"
+    "website": ""
   },
   "contacts": [
     {
@@ -83,7 +83,7 @@
       "name": "Nicholas Runolfsdottir V",
       "username": "Maxime_Nienow",
       "email": "Sherwood@rosamond.me",
-      "phone": "586.493.6943 x140",
+      "phone": "586.493.6943 xxxxx",
       "website": "jacynthe.com"
     },
     {
@@ -92,7 +92,7 @@
       "name": "Glenna Reichert",
       "username": "Delphine",
       "email": "Chaim_McDermott@dana.io",
-      "phone": "(775)976-6794 x41206",
+      "phone": "(775)976-6794",
       "website": "conrad.com"
     },
     {
@@ -227,6 +227,15 @@
       "name": "Gustavo Fring",
       "username": "Gus",
       "email": "fring@los.pollos.com",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "id": 25,
+      "avatar": "",
+      "name": "No Name",
+      "username": "",
+      "email": "",
       "phone": "",
       "website": ""
     }

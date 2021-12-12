@@ -12,7 +12,7 @@ type Props = {
   setIsEditingMode: Dispatch<SetStateAction<boolean>>,
 }
 
-export default function ContactGroup({group, contacts, setIsEditingMode}: Props): JSX.Element {
+const ContactGroup = ({group, contacts, setIsEditingMode}: Props): JSX.Element => {
   const dispatch = useDispatch();
   const selectedContact = useSelector(getSelectedContact);
   let selectedID = selectedContact ? selectedContact.id : null;
@@ -47,3 +47,5 @@ export default function ContactGroup({group, contacts, setIsEditingMode}: Props)
     </li>
   );
 }
+
+export default ContactGroup;

@@ -17,7 +17,7 @@ type Props = {
   onInputChange: (evt: ChangeEvent<HTMLInputElement>) => void,
 }
 
-export default function ContactDetail(props: Props): JSX.Element {
+const ContactDetail = (props: Props): JSX.Element  => {
   const {inputType, value, isEditingMode, onInputChange} = props;
 
   return (
@@ -38,3 +38,5 @@ export default function ContactDetail(props: Props): JSX.Element {
     </div>
   );
 }
+
+export default ContactDetail;

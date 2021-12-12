@@ -2,17 +2,30 @@ import './Contacts.css';
 import {Contact} from '../../store/reducer';
 import ContactGroup from '../ContactGroup/ContactGroup';
 import ContactCard from '../ContactCard/ContactCard';
-import {getGroupedContacts} from '../../utils';
-import {useState} from 'react';
+import {getGroupedContacts, isEscKeyDown} from '../../utils';
+import {useCallback, useEffect, useState} from 'react';
+import AddButton from '../AddButton/AddButton';
 
 type Props = {
   contacts: Contact[],
 }
 
-export default function Contacts({contacts}: Props): JSX.Element {
+const Contacts = ({contacts}: Props): JSX.Element => {
   const [isEditingMode, setIsEditingMode] = useState(false);
   const groupedContacts = getGroupedContacts(contacts);
   const groups = Object.keys(groupedContacts).sort((a, b) => (a > b) ? 1 : -1);
+
+  const onEscKeyDown = useCallback((evt: KeyboardEvent) => {
+    if (isEscKeyDown(evt)) {
+      setIsEditingMode(false);
+      document.removeEventListener('keydown', onEscKeyDown);
+    }
+  },[]);
+
+  useEffect(() => {
+    isEditingMode && document.addEventListener('keydown', onEscKeyDown);
+    return () => document.removeEventListener('keydown', onEscKeyDown);
+  }, [isEditingMode, onEscKeyDown]);
 
   return (
     <form className="contacts">
@@ -20,11 +33,11 @@ export default function Contacts({contacts}: Props): JSX.Element {
         <legend className="visually-hidden">This is your contacts list</legend>
         <header className="contacts__list-heading">
           <h1>Contacts</h1>
-          <button className="contacts__add-button" type="button">
-            <svg  xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 485 485" xmlSpace="preserve">
-              <polygon points="485,227.5 257.5,227.5 257.5,0 227.5,0 227.5,227.5 0,227.5 0,257.5 227.5,257.5 227.5,485 257.5,485 257.5,257.5 485,257.5 "/>
-            </svg>
-          </button>
+          <AddButton
+            isEditingMode={isEditingMode}
+            setIsEditingMode={setIsEditingMode}
+            contacts={contacts}
+          />
         </header>
         <ul className="contact-list">
           { groups.map((group) => (
@@ -45,3 +58,5 @@ export default function Contacts({contacts}: Props): JSX.Element {
     </form>
   );
 }
+
+export default Contacts;

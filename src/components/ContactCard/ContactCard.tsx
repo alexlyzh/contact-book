@@ -14,7 +14,7 @@ type Props = {
   setIsEditingMode: Dispatch<SetStateAction<boolean>>,
 }
 
-export default function ContactCard({isEditingMode, setIsEditingMode}: Props): JSX.Element {
+const ContactCard = ({isEditingMode, setIsEditingMode}: Props): JSX.Element => {
   const dispatch = useDispatch();
   const contact = useSelector(getSelectedContact);
 
@@ -43,7 +43,6 @@ export default function ContactCard({isEditingMode, setIsEditingMode}: Props): J
         setIsEditingMode={setIsEditingMode}
         onInputChange={onInputChange}
       />
-      {id}
       <div className="contact-card__container contact-card__detailed-info">
         <ContactDetail value={email} inputType={InputType.Email} isEditingMode={isEditingMode} onInputChange={onInputChange}/>
         <ContactDetail value={phone} inputType={InputType.Phone} isEditingMode={isEditingMode} onInputChange={onInputChange}/>
@@ -53,3 +52,5 @@ export default function ContactCard({isEditingMode, setIsEditingMode}: Props): J
     </div>
   );
 }
+
+export default ContactCard;

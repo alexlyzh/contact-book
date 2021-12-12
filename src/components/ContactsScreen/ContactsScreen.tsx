@@ -6,7 +6,7 @@ import {useEffect} from 'react';
 import {APIAction} from '../../store/api-acitons';
 import Contacts from '../Contacts/Contacts';
 
-export default function ContactsScreen(): JSX.Element {
+const ContactsScreen = (): JSX.Element => {
   const contactsData = useSelector(getContacts);
   const selectedContact = useSelector(getSelectedContact);
   const dispatch = useDispatch();
@@ -33,3 +33,5 @@ export default function ContactsScreen(): JSX.Element {
     </div>
   );
 }
+
+export default ContactsScreen;

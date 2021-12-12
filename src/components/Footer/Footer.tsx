@@ -4,7 +4,7 @@ type Props = {
   className?: string,
 }
 
-export default function Footer({className}: Props): JSX.Element {
+const Footer = ({className}: Props): JSX.Element => {
   return (
     <footer className={`footer ${className ? className : ''}`}>
       <a
@@ -18,3 +18,5 @@ export default function Footer({className}: Props): JSX.Element {
     </footer>
   );
 }
+
+export default Footer;

@@ -13,7 +13,7 @@ type Props = {
   layoutClassName?: string,
 }
 
-export default function CardHeading(props: Props): JSX.Element {
+const CardHeading = (props: Props): JSX.Element => {
   const {id, isEditingMode, setIsEditingMode, name, username, avatar, layoutClassName, onInputChange} = props;
 
   return (
@@ -35,9 +35,8 @@ export default function CardHeading(props: Props): JSX.Element {
           value={name}
           readOnly={!isEditingMode}
           onChange={onInputChange}
-          required
         />
-        {username &&
+        {(username || isEditingMode) &&
           <input
             className={`card-heading__input card-heading__username ${isEditingMode ? 'card-heading__input--editable' : ''}`}
             type="text"
@@ -50,3 +49,5 @@ export default function CardHeading(props: Props): JSX.Element {
     </header>
   );
 }
+
+export default CardHeading;
