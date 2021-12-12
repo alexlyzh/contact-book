@@ -1,13 +1,13 @@
 import './ContactsScreen.css'
 import {useDispatch, useSelector} from 'react-redux';
-import {getContacts, getSelectedContact} from '../../store/selectors';
+import {getSelectedContact, selectSearchedContacts} from '../../store/selectors';
 import {RequestStatus} from '../../store/reducer';
 import {useEffect} from 'react';
 import {APIAction} from '../../store/api-acitons';
 import Contacts from '../Contacts/Contacts';
 
 const ContactsScreen = (): JSX.Element => {
-  const contactsData = useSelector(getContacts);
+  const contactsData = useSelector(selectSearchedContacts);
   const selectedContact = useSelector(getSelectedContact);
   const dispatch = useDispatch();
 

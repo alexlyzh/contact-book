@@ -34,6 +34,7 @@ export type State = {
   contacts: ContactsData,
   selectedContact: Contact | null,
   isLoadingFinished: boolean,
+  search: string,
 }
 
 const initialState: State = {
@@ -44,6 +45,7 @@ const initialState: State = {
   },
   selectedContact: null,
   isLoadingFinished: false,
+  search: '',
 }
 
 export const reducer = createReducer(initialState, (builder) => {
@@ -81,5 +83,8 @@ export const reducer = createReducer(initialState, (builder) => {
     })
     .addCase(ActionCreator.updateSelectedContact, (state, action) => {
       state.selectedContact = action.payload;
+    })
+    .addCase(ActionCreator.search, (state, action) => {
+      state.search = action.payload;
     });
 });

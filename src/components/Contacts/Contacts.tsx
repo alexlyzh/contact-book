@@ -39,7 +39,7 @@ const Contacts = ({contacts}: Props): JSX.Element => {
             setIsEditingMode={setIsEditingMode}
             contacts={contacts}
           />
-          <Search/>
+          <Search />
         </header>
         <ul className="contact-list">
           { groups.map((group) => (

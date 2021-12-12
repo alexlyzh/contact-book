@@ -1,17 +1,16 @@
 {
   "login": {
     "email": "al.lyzhin@gmail.com",
-    "password": "12"
+    "password": "123"
   },
-  "logout": {},
   "selected-contact": {
-    "id": 21,
-    "avatar": "https://1.bp.blogspot.com/-9-_2OtdS2kk/WpAlNrQWJtI/AAAAAAAAduY/RUs6n_xCkRUgJQrWKrweEglOqUbDYXOSgCLcBGAs/s640/Steve%2BJobs.jpg",
-    "name": "Steven Paul Jobs",
-    "username": "Steve",
-    "email": "steve@apple.com",
+    "id": 25,
+    "avatar": "",
+    "name": "No Name",
+    "username": "",
+    "email": "",
     "phone": "",
-    "website": "apple.com"
+    "website": ""
   },
   "contacts": [
     {
@@ -227,6 +226,15 @@
       "name": "Gustavo Fring",
       "username": "Gus",
       "email": "fring@los.pollos.com",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "id": 25,
+      "avatar": "",
+      "name": "No Name",
+      "username": "",
+      "email": "",
       "phone": "",
       "website": ""
     }

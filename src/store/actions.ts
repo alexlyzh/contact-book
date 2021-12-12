@@ -13,6 +13,7 @@ export enum ActionType {
   SaveContactList = 'SaveContactList',
   SetLoadingContactsError = 'SetLoadingContactsError',
   UpdateSelectedContact = 'UpdateSelectedContact',
+  Search = 'Search',
 }
 
 export const ActionCreator = {
@@ -35,5 +36,10 @@ export const ActionCreator = {
   updateSelectedContact: createAction(
     ActionType.UpdateSelectedContact,
     (contact: Contact | null) => ({payload: contact}),
+  ),
+
+  search: createAction(
+    ActionType.Search,
+    (search: string) => ({payload: search}),
   ),
 };

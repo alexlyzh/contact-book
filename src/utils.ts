@@ -20,6 +20,7 @@ export const getGroupedContacts = (contacts: Contact[]): GroupedContacts => {
     groupedContacts[groupName] = [contact];
   });
 
+
   return groupedContacts;
 };
 
@@ -36,3 +37,15 @@ export const sortContacts = (contacts: Contact[]) => {
 };
 
 export const isEscKeyDown = (evt: KeyboardEvent) => evt.keyCode === 27;
+
+export const debounce = (
+  callback: (...params: any[]) => any,
+  delay: number
+) => {
+  let timeoutId: ReturnType<typeof setTimeout>;
+
+  return (...args: any[]) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => callback.apply(this, args), delay);
+  };
+};
