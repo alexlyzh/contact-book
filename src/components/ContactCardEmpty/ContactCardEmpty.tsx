@@ -8,7 +8,7 @@ const ContactCardEmpty = (): JSX.Element => {
   return (
     <div className="contact-card">
       <p className="contact-card__not-selected">
-        {isLoadingFinished ? 'Select a contact from the menu' : 'Loading'}
+        {isLoadingFinished ? 'Select a contact from the menu' : 'Loading...'}
       </p>
       <Footer className="contact-card__footer"/>
     </div>

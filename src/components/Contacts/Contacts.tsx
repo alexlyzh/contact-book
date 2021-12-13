@@ -6,6 +6,7 @@ import {getGroupedContacts, isEscKeyDown} from '../../utils';
 import {useCallback, useEffect, useState} from 'react';
 import AddButton from '../AddButton/AddButton';
 import Search from '../Search/Search';
+import NoContacts from './NoContacts';
 
 type Props = {
   contacts: Contact[],
@@ -27,7 +28,7 @@ const Contacts = ({contacts}: Props): JSX.Element => {
     isEditingMode && document.addEventListener('keydown', onEscKeyDown);
     return () => document.removeEventListener('keydown', onEscKeyDown);
   }, [isEditingMode, onEscKeyDown]);
-
+  console.log(groups);
   return (
     <form className="contacts">
       <fieldset className="contacts__left-section">
@@ -42,14 +43,15 @@ const Contacts = ({contacts}: Props): JSX.Element => {
           <Search />
         </header>
         <ul className="contact-list">
-          { groups.map((group) => (
+          {groups.length ?
+            groups.map((group) => (
             <ContactGroup
               key={group}
               group={group}
               contacts={groupedContacts[group]}
               setIsEditingMode={setIsEditingMode}
             />
-          )) }
+          )) : <NoContacts />}
         </ul>
       </fieldset>
       <fieldset className="contacts__right-section">

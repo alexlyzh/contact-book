@@ -4,6 +4,7 @@ import {useSelector} from 'react-redux';
 import {getUser} from '../../store/selectors';
 import {Routes, Route, Navigate} from 'react-router-dom';
 import {AppRoute} from '../../constants';
+import NotFoundScreen from '../NotFoundScreen/NotFoundScreen';
 
 const App = (): JSX.Element => {
   const user = useSelector(getUser);
@@ -19,6 +20,7 @@ const App = (): JSX.Element => {
       <Route path={AppRoute.Contacts} element={
         user ? <ContactsScreen/> : <Navigate to={AppRoute.Login} replace/>
       }/>
+      <Route path="*" element={<NotFoundScreen />}/>
     </Routes>
   );
 }
