@@ -4,7 +4,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Launches a **client and server** parts of the app in one console window concurrently.
+Launches the **client and server** parts of the app in one console window concurrently.
 
 Runs the app in the development mode.\
 Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
@@ -13,11 +13,11 @@ The page will reload if you make edits.
 
 ### `npm run start:server`
 
-Launches a **server part** of the app at [http://localhost:3000](http://localhost:3000)
+Launches the **server part** of the app at [http://localhost:3000](http://localhost:3000)
 
 ### `npm run start:client`
 
-Launches a **client part** of the app at [http://localhost:4200](http://localhost:4200)
+Launches the **client part** of the app at [http://localhost:4200](http://localhost:4200)
 
 ### `npm test`
 
