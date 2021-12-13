@@ -1,7 +1,7 @@
 import * as S from './AddButton.styled';
 import {useDispatch, useSelector} from 'react-redux';
 import {Contact} from '../../store/reducer';
-import {getIsLoadingFinished} from '../../store/selectors';
+import {getIsLoadingFinished, getMaxContactId} from '../../store/selectors';
 import {ActionCreator} from '../../store/actions';
 import {Dispatch, SetStateAction} from 'react';
 
@@ -21,17 +21,12 @@ const newContact = {
   isNew: true,
 };
 
-const getNewContactId = (contacts: Contact[]): number => {
-  let maxId = 0;
-  contacts.forEach((contact) => maxId = Math.max(maxId, contact.id));
-  return ++maxId;
-}
-
 const AddButton = ({isEditingMode, setIsEditingMode, contacts}: Props): JSX.Element => {
   const dispatch = useDispatch();
+  const maxContactsId = useSelector(getMaxContactId);
   const isLoadingFinished = useSelector(getIsLoadingFinished);
 
-  const id = getNewContactId(contacts);
+  const id = maxContactsId +1;
 
   return (
     <S.AddButton

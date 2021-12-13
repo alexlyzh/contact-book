@@ -10,11 +10,15 @@ export const getSearch = (state: State): string => state.search;
 export const selectSearchedContacts = createSelector(
   [getSearch, getContacts],
   (search, contactsData) => {
-    const contacts = contactsData.data;
-    const regexp = new RegExp(!search ? /.*/ : `${search.toLowerCase()}`, 'g');
-
+    const {requestStatus, data} = contactsData;
     return {
-      requestStatus: contactsData.requestStatus,
-      data: contacts.filter((contact) => regexp.test(contact.name.toLowerCase())),
+      requestStatus,
+      data: data.filter((contact) => contact.name.toLowerCase().includes(search.toLowerCase())),
     };
+});
+
+export const getMaxContactId = createSelector(getContacts, (contacts) => {
+  let maxId = 0;
+  contacts.data.forEach((contact) => maxId = Math.max(maxId, contact.id));
+  return maxId;
 });

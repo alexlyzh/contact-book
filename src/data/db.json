@@ -4,11 +4,11 @@
     "password": "123"
   },
   "selected-contact": {
-    "id": 25,
-    "avatar": "",
-    "name": "No Name",
-    "username": "",
-    "email": "",
+    "id": 19,
+    "avatar": "https://i.ytimg.com/vi/HpUnDGCq4po/hqdefault.jpg",
+    "name": "Leslie Nielsen",
+    "username": "Naked.Gun",
+    "email": "David.McLaughlin98@hotmail.com",
     "phone": "",
     "website": ""
   },
@@ -226,15 +226,6 @@
       "name": "Gustavo Fring",
       "username": "Gus",
       "email": "fring@los.pollos.com",
-      "phone": "",
-      "website": ""
-    },
-    {
-      "id": 25,
-      "avatar": "",
-      "name": "No Name",
-      "username": "",
-      "email": "",
       "phone": "",
       "website": ""
     }

@@ -2,6 +2,7 @@ import * as S from './Search.styled';
 import {useDispatch} from 'react-redux';
 import {ActionCreator} from '../../store/actions';
 import {ChangeEvent} from 'react';
+import {debounce} from '../../utils';
 
 const Search = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const Search = (): JSX.Element => {
     <S.Search
       type="search"
       placeholder="Search"
-      onChange={onInputChange}
+      onChange={debounce(onInputChange, 500)}
     />
   );
 };

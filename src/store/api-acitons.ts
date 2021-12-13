@@ -86,12 +86,11 @@ export const APIAction = {
     async (dispatch, getState, api): Promise<void> => {
       try {
         const contactCopy = handleContact(contact);
-        console.log(contactCopy);
+
         const {data} = await api.post<Contact>(APIRoute.Contacts, contactCopy);
         const contacts = [...getState().contacts.data, data];
         dispatch(ActionCreator.saveContactList(contacts));
       } catch (e) {
-        console.log(e);
         throw e;
       }
     },
