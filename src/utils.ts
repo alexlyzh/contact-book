@@ -1,5 +1,5 @@
 import {Contact} from './store/reducer';
-import {NO_NAME} from './constants';
+import {NO_NAME, ESC_BUTTON_KEYCODE} from './constants';
 
 export type GroupedContacts = {
   [key: string]: Contact[],
@@ -36,7 +36,7 @@ export const sortContacts = (contacts: Contact[]) => {
   })
 };
 
-export const isEscKeyDown = (evt: KeyboardEvent) => evt.keyCode === 27;
+export const isEscKeyDown = (evt: KeyboardEvent) => evt.keyCode === ESC_BUTTON_KEYCODE;
 
 export const debounce = (
   callback: (...params: any[]) => any,

@@ -11,7 +11,6 @@ type AuthData = {
 
 enum APIRoute {
   Login = '/login',
-  Logout = '/logout',
   Contacts = '/contacts',
   Contact = '/contacts/:id',
   SelectedContact = '/selected-contact',
@@ -32,16 +31,6 @@ export const APIAction = {
       try {
         const {data} = await api.post<User>(APIRoute.Login, {email, password});
         dispatch(ActionCreator.loginUser(data));
-      } catch (err) {
-        throw err;
-      }
-    },
-
-  logout: (): ThunkActionResult =>
-    async (dispatch, _getState, api): Promise<void> => {
-      try {
-        await api.delete<User>(APIRoute.Logout);
-        dispatch(ActionCreator.logoutUser());
       } catch (err) {
         throw err;
       }

@@ -13,3 +13,5 @@ export enum InputType  {
 }
 
 export const NO_NAME = 'No Name';
+
+export const ESC_BUTTON_KEYCODE = 27;

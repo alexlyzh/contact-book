@@ -51,15 +51,7 @@ const initialState: State = {
 export const reducer = createReducer(initialState, (builder) => {
   builder
     .addCase(ActionCreator.loginUser, (state, action) => {
-    state.user = action.payload;
-  })
-    .addCase(ActionCreator.logoutUser, (state) => {
-      state.user = null;
-      state.contacts = {
-        requestStatus: RequestStatus.IDLE,
-        data: [],
-      };
-      state.selectedContact = null;
+      state.user = action.payload;
     })
     .addCase(ActionCreator.saveContactList, (state, action) => {
       state.contacts = {

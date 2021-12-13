@@ -8,7 +8,6 @@ export type ThunkActionResult<R = Promise<void>> = ThunkAction<R, State, AxiosIn
 
 export enum ActionType {
   Login = 'Login',
-  Logout = 'Logout',
   StartLoadingContacts = 'StartLoadingContacts',
   SaveContactList = 'SaveContactList',
   SetLoadingContactsError = 'SetLoadingContactsError',
@@ -30,8 +29,6 @@ export const ActionCreator = {
     ActionType.SaveContactList,
     (contacts: Contact[]) => ({payload: contacts}),
   ),
-
-  logoutUser: createAction(ActionType.Logout),
 
   updateSelectedContact: createAction(
     ActionType.UpdateSelectedContact,

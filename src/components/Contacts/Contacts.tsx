@@ -28,7 +28,7 @@ const Contacts = ({contacts}: Props): JSX.Element => {
     isEditingMode && document.addEventListener('keydown', onEscKeyDown);
     return () => document.removeEventListener('keydown', onEscKeyDown);
   }, [isEditingMode, onEscKeyDown]);
-  console.log(groups);
+
   return (
     <form className="contacts">
       <fieldset className="contacts__left-section">
