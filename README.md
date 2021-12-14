@@ -1,6 +1,9 @@
-## Available Scripts
+How to launch the app:
 
-In the project directory, you can run:
+1) Install node.js
+2) In the project directory run `npm start`
+
+## List of available scripts
 
 ### `npm start`
 
