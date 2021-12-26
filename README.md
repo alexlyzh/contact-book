@@ -1,8 +1,3 @@
-How to launch the app:
-
-1) Install node.js
-2) In the project directory run `npm start`
-
 ## List of available scripts
 
 ### `npm start`
